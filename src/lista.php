@@ -31,21 +31,25 @@ include "./head.php"
             <input type="text" class="form-control" placeholder="Pesquisar" name="valor" id=""><br>
         </div>
 
-        <select name=" tipo" id="">
-            <option value="nome">Nome</option>
-            <option value="sobrenome">Sobrenome</option>
-            <option value="telefone1">Telefone 02</option>
-            <option value="tipo_telefone1">Tipo telefone 01</option>
-            <option value="telefone2">Telefone 02</option>
-            <option value="tipo_telefone2">Tipo telefone 02</option>
-            <option value="email">E-mail</option>
-        </select>
-        <input type="submit" value="Buscar">
-    </div>
+        <div class="col-2">
+            <select name="tipo" class="form-control" id="">
+                <option value="nome">Nome</option>
+                <option value="sobrenome">Sobrenome</option>
+                <option value="telefone1">Telefone 02</option>
+                <option value="tipo_telefone1">Tipo telefone 01</option>
+                <option value="telefone2">Telefone 02</option>
+                <option value="tipo_telefone2">Tipo telefone 02</option>
+                <option value="email">E-mail</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Buscar</button>
 
+            <a href="./cadastro.php" class="btn btn-success"> <i class="fas fa-plus-circle"></i> Cadastrar</a>
+        </div>
+    </div>
 </form>
 
-<a href='./cadastro.php'> Cadastrar</a>
 
 
 <table class="table table-hover">
