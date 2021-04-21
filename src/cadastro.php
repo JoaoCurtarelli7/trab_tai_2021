@@ -45,81 +45,91 @@ include "./head.php"
 </head>
 
 <body>
-    <h3>Formulário</h3>
+    <br>
+    <h3>Formulário Contato</h3>
 
     <form action="cadastro.php" method="post">
         <input type="hidden" name="id" styles="width: 500px" value="<?php echo !empty($result->id)
 ? $result->id : ""; ?>"><br>
 
-        <div class="input-group mb-3">
+        <div class="row">
 
-            <input type="text" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" name="nome" id=""
-                value="<?php echo !empty($result->nome)
+
+            <div class="col-6">
+
+                <input type="text" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" name="nome"
+                    id="" value="<?php echo !empty($result->nome)
 ? $result->nome : ""; ?>" required>
-        </div><br>
-
-
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Sobrenome" aria-describedby="basic-addon1"
-                name="sobrenome" id="" value="<?php echo !empty($result->sobrenome)
-? $result->sobrenome : ""; ?>" required>
-        </div><br>
-
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Telefone 01" aria-describedby="basic-addon1"
-                name="telefone1" id="" value="<?php echo !empty($result->telefone1)
-? $result->telefone1 : ""; ?>" required>
-        </div>
-
-        <div class="input-group mb-3">
-            <select style="width: 500px;" class="custom-select" name="tipo_telefone1" id="" value="<?php echo !empty($result->tipo_telefone1)
-? $result->tipo_telefone1 : ""; ?>" required>
-
-                <option selected>Tipo Telefone 01</option>
-                <option value="Casa">Casa</option>
-                <option value="Celular">Celular</option>
-                <option value="Comercial">Comercial</option>
-                <option value="Principal">Principal</option>
-            </select>
-            <div class="input-group-append">
-                <label class="input-group-text" for="inputGroupSelect02">Opções</label>
             </div>
-        </div><br>
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Telefone 02" aria-describedby="basic-addon1"
-                name="telefone2" id="" value="<?php echo !empty($result->telefone2)
-? $result->telefone2 : ""; ?>" required>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Sobrenome" aria-describedby="basic-addon1"
+                    name="sobrenome" id="" value="<?php echo !empty($result->sobrenome)
+? $result->sobrenome : ""; ?>" required><br>
+            </div>
         </div>
 
-        <div class="input-group mb-3">
-            <select style="width: 500px;" class="custom-select" name="tipo_telefone2" id="" value="<?php echo !empty($result->tipo_telefone2)
+        <div class="row">
+
+
+            <div class="col-3">
+                <input type="text" class="form-control" placeholder="Telefone 01" aria-describedby="basic-addon1"
+                    name="telefone1" id="" value="<?php echo !empty($result->telefone1)
+? $result->telefone1 : ""; ?>" required><br>
+            </div>
+
+            <div class="col-3">
+                <select style="width: 500px;" class="custom-select" name="tipo_telefone1" id="" value="<?php echo !empty($result->tipo_telefone1)
+? $result->tipo_telefone1 : ""; ?>" required><br>
+
+                    <option selected>Tipo Telefone 01</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Celular">Celular</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Principal">Principal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-3">
+                <input type="text" class="form-control" placeholder="Telefone 02" aria-describedby="basic-addon1"
+                    name="telefone2" id="" value="<?php echo !empty($result->telefone2)
+? $result->telefone2 : ""; ?>" required><br>
+            </div>
+
+
+            <div class="col-3">
+                <select style="width: 500px;" class="custom-select" name="tipo_telefone2" id="" value="<?php echo !empty($result->tipo_telefone2)
 ? $result->tipo_telefone2 : ""; ?>" required>
 
-                <option selected>Tipo Telefone 02</option>
-                <option value="Casa">Casa</option>
-                <option value="Celular">Celular</option>
-                <option value="Comercial">Comercial</option>
-                <option value="Principal">Principal</option>
-            </select>
-            <div class="input-group-append">
-                <label class="input-group-text" for="inputGroupSelect02">Opções</label>
+                    <option selected>Tipo Telefone 02</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Celular">Celular</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Principal">Principal</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1"
+                    name="email" id="" value="<?php echo !empty($result->email)
+? $result->email : ""; ?>" required><br><br>
+
             </div>
         </div>
 
+        <button type="submit" value="Salvar" class="btn btn-success"><i class="far fa-save"> Salvar</i></button>
+        <button type="button" class="btn btn-primary"> <a style="color: white" href="./lista.php"><i
+                    class="fas fa-arrow-left"> Voltar</i></a></button>
 
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1" name="email"
-                id="" value="<?php echo !empty($result->email)
-? $result->email : ""; ?>" required>
-        </div><br>
-
-
-        <input type="submit" value="Salvar">
-        <a href="./lista.php">Voltar</a>
     </form>
 </body>
 

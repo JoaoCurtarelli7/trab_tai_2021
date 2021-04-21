@@ -20,23 +20,28 @@ if (!empty($_GET['id'])) {
 include "./head.php"
 ?>
 
-
+<br>
 <h4>Listagem de Usuários</h4>
+<br>
 
-<form action="cadastro.php" method="post">
-    <input type="text" name="valor" id="">
 
-    <select name="tipo" id="">
-        <option value="nome">Nome</option>
-        <option value="sobrenome">Sobrenome</option>
-        <option value="telefone1">Telefone 02</option>
-        <option value="tipo_telefone1">Tipo telefone 01</option>
-        <option value="telefone2">Telefone 02</option>
-        <option value="tipo_telefone2">Tipo telefone 02</option>
-        <option value="email">E-mail</option>
-    </select>
-    <input type="submit" value="Buscar">
-</form>
+<form action="lista.php" method="post">
+    <div class="row">
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="Pesquisar" name="valor" id=""><br>
+        </div>
+
+        <select name=" tipo" id="">
+            <option value="nome">Nome</option>
+            <option value="sobrenome">Sobrenome</option>
+            <option value="telefone1">Telefone 02</option>
+            <option value="tipo_telefone1">Tipo telefone 01</option>
+            <option value="telefone2">Telefone 02</option>
+            <option value="tipo_telefone2">Tipo telefone 02</option>
+            <option value="email">E-mail</option>
+        </select>
+        <input type="submit" value="Buscar">
+    </div>
 
 </form>
 
@@ -45,7 +50,7 @@ include "./head.php"
 
 <table class="table table-hover">
     <thead>
-        <th scope="col">ID</th>
+        <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Sobrenome</th>
         <th scope="col">Telefone 01</th>
