@@ -95,6 +95,17 @@ include "./head.php"
         </div>
         <div class="form-row">
 
+            <div class="col-6">
+                <label>Local</label>
+                <input type="text" class="form-control" placeholder="Local" aria-describedby="basic-addon1" name="nome"
+                    id="" value="<?php echo !empty($result->nome)
+? $result->nome : ""; ?>" required><br>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
             <div class="form-group col-md-6"><label>Convidado</label>
                 <select class="custom-select" name="id" id="" value="<?php echo !empty($result->convidado_id)
 ? $result->convidado_id : ""; ?>" required>
@@ -111,9 +122,16 @@ include "./head.php"
         <div class="form-row">
             <div class="form-group col-6">
                 <label for="exampleFormControlTextarea1">Descrição</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="Ponto de referência..."></textarea>
             </div>
         </div>
+
+        <button type="submit" value="Salvar" class="btn btn-success"><i class="far fa-save"></i> Salvar</button>
+        <button type="button" class="btn btn-primary"> <a style="color: white" href="./listaAgenda.php"><i
+                    class="fas fa-arrow-left"></i> Voltar</a></button>
+
+
     </form>
 </body>
 
