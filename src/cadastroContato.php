@@ -124,7 +124,7 @@ include "./head.php"
 
         <button type="submit" value="Salvar" class="btn btn-success"><i class="far fa-save"></i> Salvar</button>
         <button type="button" class="btn btn-primary"> <a style="color: white" href="./listaContato.php"><i
-                    class="fas fa-arrow-left"></i> Voltar</a></button><br><br>
+                    class="fas fa-arrow-left"></i> Voltar</a></button><br>
     </form>
 </body>
 

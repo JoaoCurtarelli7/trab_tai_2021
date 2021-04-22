@@ -7,13 +7,15 @@ $objBD = new bd();
 if (!empty($_POST['nome'])) {
     $dados = [
         "id" => $_POST['id'],
-        "nome" => $_POST['nome'],
-        "sobrenome" => $_POST['sobrenome'],
-        "telefone1" => $_POST['telefone1'],
-        "tipo_telefone1" => $_POST['tipo_telefone1'],
-        "telefone2" => $_POST['telefone2'],
-        "tipo_telefone2" => $_POST['tipo_telefone2'],
-        "email" => $_POST['email'],
+        "titulo" => $_POST['titulo'],
+        "data_inicio" => $_POST['data_inicio'],
+        "hora_inicio" => $_POST['hora_inicio'],
+        "data_fim" => $_POST['data_fim'],
+        "hora_fim" => $_POST['hora_fim'],
+        "local" => $_POST['local'],
+        "convidado_id" => $_POST['convidado_id'],
+        "descricao" => $_POST['descricao'],
+
 
     ];
 
@@ -107,14 +109,21 @@ include "./head.php"
         <div class="form-row">
 
             <div class="form-group col-md-6"><label>Convidado</label>
-                <select class="custom-select" name="id" id="" value="<?php echo !empty($result->convidado_id)
-? $result->convidado_id : ""; ?>" required>
+                <label for="categoria_id">Categoria</label>
+                <select class="custom-select" id="categoria_id" name="categoria_id">
+                    <?php
+                foreach ($resultCategoria as $item) {
+                    $item = (object) $item;
 
-                    <option selected>Convidado</option>
-                    <option value="Casa">Casa</option>
-                    <option value="Celular">Celular</option>
-                    <option value="Comercial">Comercial</option>
-                    <option value="Principal">Principal</option>
+                    $selected = $item->id === $result->categoria_id ? "selected" : "";
+
+                    echo " <option value=" . $item->id . " $selected>" . $item->nome . "</option>";
+                }
+                ?>
+                </select>
+
+
+
                 </select>
             </div>
 
