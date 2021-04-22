@@ -31,7 +31,7 @@ include "./head.php"
             <input type="text" class="form-control" placeholder="Pesquisar" name="valor" id=""><br>
         </div>
 
-        <div class="col-2">
+        <div class="col-1.50">
             <select name="tipo" class="form-control" id="">
                 <option>Tipo</option>
                 <option value="nome">Nome</option>
@@ -44,9 +44,9 @@ include "./head.php"
             </select>
         </div>
         <div class="col-3">
-            <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Buscar</button>
+            <button type="submit" class="btn btn-outline-success"> <i class="fas fa-search"></i> Buscar</button>
 
-            <a href="./cadastroContato.php" class="btn btn-success"> <i class="fas fa-plus-circle"></i> Cadastrar</a>
+            <a href="./cadastroContato.php" class="btn btn-primary"><i class="fas fa-plus"></i> Cadastrar</a>
         </div>
     </div>
 </form>
@@ -78,13 +78,13 @@ foreach ($result as $item) {
         <th scope='row'>" . $item->id . "</td>
         <td>" . $item->nome . "</td>
         <td>" . $item->sobrenome . "</td>
-        <td>" . $item->telefone1 . "</td>
+        <td style=color:blue>" . $item->telefone1 . "</td>
         <td>" . $item->tipo_telefone1 . "</td>
-        <td>" . $item->telefone2 . "</td>
+        <td style=color:blue>" . $item->telefone2 . "</td>
         <td>" . $item->tipo_telefone2 . "</td>
-        <td>" . $item->email . "</td>
-        <td><a href = 'cadastroContato.php?id=" . $item->id . "'><i class=\"fas fa-user-edit\"></i></a></td>
-        <td><a href='listaContato.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \"  > <i class=\"fas fa-user-times\"></i></a> </td>       
+        <td style=color:blue>" . $item->email . "</td>
+        <td><a href = 'cadastroContato.php?id=" . $item->id . "' style='color:orange;''><i class='fas fa-edit'></i></a></td>
+        <td><a href='listaContato.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \" style='color:red;'><i class='fas fa-trash'></i></a> </td>       
          </tr>
         ";
 }
