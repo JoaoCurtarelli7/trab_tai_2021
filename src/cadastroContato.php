@@ -52,7 +52,7 @@ include "./head.php"
         <input type="hidden" name="id" styles="width: 500px" value="<?php echo !empty($result->id)
 ? $result->id : ""; ?>"><br>
 
-        <div class="row">
+        <div class="form-row">
 
 
             <div class="col-6">
@@ -69,7 +69,7 @@ include "./head.php"
             </div>
         </div>
 
-        <div class="row">
+        <div class="form-row">
 
 
             <div class="col-3">
@@ -78,9 +78,9 @@ include "./head.php"
 ? $result->telefone1 : ""; ?>" required><br>
             </div>
 
-            <div class="col-3">
-                <select style="width: 500px;" class="custom-select" name="tipo_telefone1" id="" value="<?php echo !empty($result->tipo_telefone1)
-? $result->tipo_telefone1 : ""; ?>" required><br>
+            <div class="form-group col-md-3">
+                <select class="custom-select" name="tipo_telefone1" id="" value="<?php echo !empty($result->tipo_telefone1)
+? $result->tipo_telefone1 : ""; ?>" required>
 
                     <option selected>Tipo Telefone 01</option>
                     <option value="Casa">Casa</option>
@@ -89,9 +89,15 @@ include "./head.php"
                     <option value="Principal">Principal</option>
                 </select>
             </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1"
+                    name="email" id="" value="<?php echo !empty($result->email)
+? $result->email : ""; ?>" required><br>
+
+            </div>
         </div>
 
-        <div class="row">
+        <div class="form-row">
 
 
             <div class="col-3">
@@ -101,8 +107,8 @@ include "./head.php"
             </div>
 
 
-            <div class="col-3">
-                <select style="width: 500px;" class="custom-select" name="tipo_telefone2" id="" value="<?php echo !empty($result->tipo_telefone2)
+            <div class="form-group col-md-3">
+                <select class="custom-select" name="tipo_telefone2" id="" value="<?php echo !empty($result->tipo_telefone2)
 ? $result->tipo_telefone2 : ""; ?>" required>
 
                     <option selected>Tipo Telefone 02</option>
@@ -117,12 +123,7 @@ include "./head.php"
         </div>
 
         <div class="row">
-            <div class="col-6">
-                <input type="text" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1"
-                    name="email" id="" value="<?php echo !empty($result->email)
-? $result->email : ""; ?>" required><br><br>
 
-            </div>
         </div>
 
         <button type="submit" value="Salvar" class="btn btn-success"><i class="far fa-save"></i> Salvar</button>
