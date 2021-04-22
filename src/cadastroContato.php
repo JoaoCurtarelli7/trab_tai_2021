@@ -23,7 +23,7 @@ if (!empty($_POST['nome'])) {
         $objBD->insert($dados);
     }
 
-    header("location:lista.php");
+    header("location:listaContato.php");
 } elseif (!empty($_GET['id'])) {
     $result = $objBD->find($_GET['id']);
 }
@@ -48,7 +48,7 @@ include "./head.php"
     <br>
     <h3>Formulário Contato</h3>
 
-    <form action="cadastro.php" method="post">
+    <form action="cadastroContato.php" method="post">
         <input type="hidden" name="id" styles="width: 500px" value="<?php echo !empty($result->id)
 ? $result->id : ""; ?>"><br>
 
@@ -126,7 +126,7 @@ include "./head.php"
         </div>
 
         <button type="submit" value="Salvar" class="btn btn-success"><i class="far fa-save"></i> Salvar</button>
-        <button type="button" class="btn btn-primary"> <a style="color: white" href="./lista.php"><i
+        <button type="button" class="btn btn-primary"> <a style="color: white" href="./listaContato.php"><i
                     class="fas fa-arrow-left"></i> Voltar</a></button>
 
 

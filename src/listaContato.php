@@ -11,7 +11,7 @@ if (!empty($_POST['valor'])) {
 }
 if (!empty($_GET['id'])) {
     $objBD->remove($_GET['id']);
-    header("location:lista.php");
+    header("location:listaContato.php");
 }
 
 ?>
@@ -25,7 +25,7 @@ include "./head.php"
 <br>
 
 
-<form action="lista.php" method="post">
+<form action="listaContato.php" method="post">
     <div class="row">
         <div class="col-3">
             <input type="text" class="form-control" placeholder="Pesquisar" name="valor" id=""><br>
@@ -45,7 +45,7 @@ include "./head.php"
         <div class="col-3">
             <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Buscar</button>
 
-            <a href="./cadastro.php" class="btn btn-success"> <i class="fas fa-plus-circle"></i> Cadastrar</a>
+            <a href="./cadastroContato.php" class="btn btn-success"> <i class="fas fa-plus-circle"></i> Cadastrar</a>
         </div>
     </div>
 </form>
@@ -82,8 +82,8 @@ foreach ($result as $item) {
         <td>" . $item->telefone2 . "</td>
         <td>" . $item->tipo_telefone2 . "</td>
         <td>" . $item->email . "</td>
-        <td><a href = 'cadastro.php?id=" . $item->id . "'><i class=\"fas fa-user-edit\"></i></a></td>
-        <td><a href='lista.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \"  > <i class=\"fas fa-user-times\"></i></a> </td>       
+        <td><a href = 'cadastroContato.php?id=" . $item->id . "'><i class=\"fas fa-user-edit\"></i></a></td>
+        <td><a href='listaContato.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \"  > <i class=\"fas fa-user-times\"></i></a> </td>       
          </tr>
         ";
 }
