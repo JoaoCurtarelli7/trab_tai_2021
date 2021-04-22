@@ -52,8 +52,68 @@ include "./head.php"
         <input type="hidden" name="id" styles="width: 500px" value="<?php echo !empty($result->id)
 ? $result->id : ""; ?>"><br>
 
+        <div class="form-row">
 
+            <div class="col-6">
+                <label>Titulo</label>
+                <input type="text" class="form-control" placeholder="Reunião" aria-describedby="basic-addon1"
+                    name="nome" id="" value="<?php echo !empty($result->nome)
+? $result->nome : ""; ?>" required><br>
+            </div>
 
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-3">
+                <label>Data Início</label>
+                <input type="date" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
+? $result->nome : ""; ?>" required>
+            </div>
+            <div class="col-3">
+                <label>Hora Início</label>
+                <input type="time" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
+? $result->nome : ""; ?>" required>
+                <br>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-3">
+                <label>Data Fim</label>
+                <input type="date" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
+? $result->nome : ""; ?>" required>
+            </div>
+            <div class="col-3">
+                <label>Hora Fim</label>
+                <input type="time" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
+? $result->nome : ""; ?>" required><br>
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6"><label>Convidado</label>
+                <select class="custom-select" name="id" id="" value="<?php echo !empty($result->convidado_id)
+? $result->convidado_id : ""; ?>" required>
+
+                    <option selected>Convidado</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Celular">Celular</option>
+                    <option value="Comercial">Comercial</option>
+                    <option value="Principal">Principal</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="exampleFormControlTextarea1">Descrição</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
     </form>
 </body>
 

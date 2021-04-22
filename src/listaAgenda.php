@@ -35,19 +35,19 @@ include "./head.php"
             <select name="tipo" class="form-control" id="">
                 <option>Tipo</option>
                 <option value="titulo">Titulo</option>
-                <option value="data_inicio">Data inicio</option>
-                <option value="hora_inicio">Hora inicio</option>
+                <option value="data_inicio">Data Início</option>
+                <option value="hora_inicio">Hora Início</option>
                 <option value="data_fim">Data fim</option>
-                <option value="hora_fim">Hora fime</option>
+                <option value="hora_fim">Hora fim</option>
                 <option value="local">Local</option>
                 <option value="descricao">Descrição</option>
                 <option value="convidado_id">Convidado</option>
             </select>
         </div>
         <div class="col-3">
-            <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Buscar</button>
+            <button type="submit" class="btn btn-success"> <i class="fas fa-search"></i> Buscar</button>
 
-            <a href="./cadastroAgenda.php" class="btn btn-success"> <i class="fas fa-plus-circle"></i> Cadastrar</a>
+            <a href="./cadastroAgenda.php" class="btn btn-primary"><i class="fas fa-plus"></i> Cadastrar</a>
         </div>
     </div>
 </form>
@@ -58,8 +58,8 @@ include "./head.php"
     <thead>
         <th scope="col">#</th>
         <th scope="col">Titulo</th>
-        <th scope="col">Data inicio</th>
-        <th scope="col">Hora inicio</th>
+        <th scope="col">Data Início</th>
+        <th scope="col">Hora Início</th>
         <th scope="col">Data fim</th>
         <th scope="col">Hora fim</th>
         <th scope="col">Local</th>
