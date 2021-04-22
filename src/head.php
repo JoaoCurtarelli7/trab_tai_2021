@@ -28,10 +28,10 @@
                 <a class="nav-link" href="../index.php">Inicio <span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="#">Minha Agenda</a>
+                <a class="nav-link" href="./listaAgenda.php">Minha Agenda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./src/listaContato.php">Meus Contatos</a>
+                <a class="nav-link" href="./listaContato.php">Meus Contatos</a>
             </li>
         </ul>
     </div>

@@ -33,6 +33,7 @@ include "./head.php"
 
         <div class="col-2">
             <select name="tipo" class="form-control" id="">
+                <option>Tipo</option>
                 <option value="nome">Nome</option>
                 <option value="sobrenome">Sobrenome</option>
                 <option value="telefone1">Telefone 02</option>

@@ -30,6 +30,7 @@ class bd
 
         $stmt = $conn->prepare("SELECT * FROM crud_contato");
 
+
         $stmt->execute();
 
         return $stmt;
@@ -40,6 +41,7 @@ class bd
         $conn = $this->connection();
 
         $stmt = $conn->prepare("SELECT * FROM crud_contato WHERE id = ?;");
+
 
         $stmt->execute([$id]);
 
@@ -72,6 +74,7 @@ class bd
 
         return $stmt;
     }
+
 
     public function insert($dados)
     {
