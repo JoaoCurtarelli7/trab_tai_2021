@@ -14,7 +14,7 @@ class bd
     public function connection()
     {
         $str_conn = $this->bd_tipo . ":host=" . $this->bd_host .
-        ";dbname=" . $this->bd_nome . ";port=" . $this->bd_porta;
+            ";dbname=" . $this->bd_nome . ";port=" . $this->bd_porta;
 
         return new PDO(
             $str_conn,
@@ -24,34 +24,33 @@ class bd
         );
     }
 
-    public function select()
+    public function select($nameTable)
     {
         $conn = $this->connection();
 
-        $stmt = $conn->prepare("SELECT * FROM crud_contato");
-
+        $stmt = $conn->prepare("SELECT * FROM $nameTable");
 
         $stmt->execute();
 
         return $stmt;
     }
 
-    public function find($id)
+    public function find($nameTable, $id)
     {
         $conn = $this->connection();
 
-        $stmt = $conn->prepare("SELECT * FROM crud_contato WHERE id = ?;");
-
+        $stmt = $conn->prepare("SELECT * FROM $nameTable WHERE id = ?;");
 
         $stmt->execute([$id]);
 
         return $stmt->fetchObject();
     }
 
-    public function update($dados)
+    
+    public function update($nameTable, $dados)
     {
         $id = $dados['id'];
-        $sql = "UPDATE crud_contato SET";
+        $sql = "UPDATE $nameTable SET ";
 
         $flag = 0;
         $arrayValor = [];
@@ -60,14 +59,16 @@ class bd
             if ($flag == 0) {
                 $sql .= " $campo = ?";
             } else {
-                $sql .= ",  $campo = ?";
+                $sql .= ", $campo = ?";
             }
             $flag = 1;
             $arrayValor[] = $valor;
         }
 
-        $sql .= "WHERE id = $id;";
+        $sql .= " WHERE id = $id;";
+
         $conn = $this->connection();
+
         $stmt = $conn->prepare($sql);
 
         $stmt->execute($arrayValor);
@@ -75,54 +76,59 @@ class bd
         return $stmt;
     }
 
-
-    public function insert($dados)
+    public function insert($nameTable, $dados)
     {
         unset($dados['id']);
-        $sql = "INSERT INTO crud_contato (nome, sobrenome, telefone1, tipo_telefone1, telefone2, tipo_telefone2, email) VALUES (";
+        $sql = "INSERT INTO $nameTable(";
 
         $flag = 0;
-        $arrayValor = [];
-        foreach ($dados as $valor) {
+        foreach ($dados as $campo => $valor) {
+            $sql .= ($flag == 0 ? $campo : ", $campo");
 
-            if ($flag == 0) {
-                $sql .= " ?";
-            } else {
-                $sql .= ", ?";
-            }
             $flag = 1;
-            $arrayValor[] = $valor;
         }
+
+        $sql .= ") VALUES (";
+
+        $flag = 0;
+        $arrayValue = [];
+        foreach ($dados as $campo => $valor) {
+
+            $sql .= ($flag == 0 ? " ? " : ", ?");
+            $flag = 1;
+
+            $arrayValue[] = $valor;
+        }
+
         $sql .= ");";
+
         $conn = $this->connection();
         $stmt = $conn->prepare($sql);
-
-        $stmt->execute($arrayValor);
+        $stmt->execute($arrayValue);
 
         return $stmt;
     }
 
-    public function remove($id)
+    public function remove($nameTable, $id)
     {
         $conn = $this->connection();
 
-        $stmt = $conn->prepare("DELETE FROM crud_contato WHERE id = ?;");
+        $stmt = $conn->prepare("DELETE FROM $nameTable WHERE id = ?;");
 
         $stmt->execute([$id]);
 
         return $stmt;
     }
 
-    public function search($dados)
+    public function search($nameTable, $dados)
     {
         $conn = $this->connection();
         $campo = $dados['tipo'];
 
-        $stmt = $conn->prepare("SELECT * FROM crud_contato WHERE $campo like ?;");
+        $stmt = $conn->prepare("SELECT * FROM $nameTable WHERE $campo like ?;");
 
         $stmt->execute(["%" . $dados['valor'] . "%"]);
 
         return $stmt;
     }
-
 }

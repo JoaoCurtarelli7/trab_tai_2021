@@ -1,16 +1,16 @@
 <?php
-
 include '../database/bd.php';
 
 $objBD = new bd();
-
+$tabela = "crud_contato";
 if (!empty($_POST['valor'])) {
-    $result = $objBD->search($_POST);
+    $result = $objBD->search($tabela, $_POST);
 } else {
-    $result = $objBD->select();
+    $result = $objBD->select($tabela);
 }
+
 if (!empty($_GET['id'])) {
-    $objBD->remove($_GET['id']);
+    $objBD->remove($tabela, $_GET['id']);
     header("location:listaContato.php");
 }
 

@@ -1,16 +1,16 @@
 <?php
-
 include '../database/bd.php';
 
 $objBD = new bd();
-
+$tabela = "crud_agenda";
 if (!empty($_POST['valor'])) {
-    $result = $objBD->search($_POST);
+    $result = $objBD->search($tabela, $_POST);
 } else {
-    $result = $objBD->select();
+    $result = $objBD->select($tabela);
 }
+
 if (!empty($_GET['id'])) {
-    $objBD->remove($_GET['id']);
+    $objBD->remove($tabela, $_GET['id']);
     header("location:listaAgenda.php");
 }
 
@@ -85,10 +85,11 @@ foreach ($result as $item) {
         <td>" . $item->hora_fim . "</td>
         <td>" . $item->local . "</td>
         <td>" . $item->descricao . "</td>
-        <td>" . $item->convidado_id . "</td>
-        <td><a href = 'cadastroAgenda.php?id=" . $item->id . "'><i class=\"fas fa-user-edit\"></i></a></td>
-        <td><a href='listaAgenda.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \"  > <i class=\"fas fa-user-times\"></i></a> </td>       
-         </tr>
+        <td>" . $item->convidado_id . "</td>      
+        <td><a href = 'cadastroAgenda.php?id=" . $item->id . "' style='color:orange;''><i class='fas fa-edit'></i></a></td>
+        <td><a href='listaAgenda.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \" style='color:red;'><i class='fas fa-trash'></i></a> </td>       
+        
+        </tr>
         ";
 }
 ?>

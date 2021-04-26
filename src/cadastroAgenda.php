@@ -1,35 +1,25 @@
 <?php
-
 include '../database/bd.php';
 
 $objBD = new bd();
 
+$tabela = "crud_agenda";
+$resultCategoria = $objBD->select("crud_contato");
+
 if (!empty($_POST['nome'])) {
-    $dados = [
-        "id" => $_POST['id'],
-        "titulo" => $_POST['titulo'],
-        "data_inicio" => $_POST['data_inicio'],
-        "hora_inicio" => $_POST['hora_inicio'],
-        "data_fim" => $_POST['data_fim'],
-        "hora_fim" => $_POST['hora_fim'],
-        "local" => $_POST['local'],
-        "convidado_id" => $_POST['convidado_id'],
-        "descricao" => $_POST['descricao'],
-
-
-    ];
 
     if (!empty($_POST['id'])) {
-        $objBD->update($dados);
+        $objBD->update($tabela, $_POST);
     } else {
-        $objBD->insert($dados);
+        $objBD->insert($tabela, $_POST);
     }
 
     header("location:listaAgenda.php");
 } elseif (!empty($_GET['id'])) {
-    $result = $objBD->find($_GET['id']);
+    $result = $objBD->find($tabela, $_GET['id']);
 }
 ?>
+
 
 
 <?php

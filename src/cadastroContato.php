@@ -1,31 +1,22 @@
 <?php
-
 include '../database/bd.php';
 
 $objBD = new bd();
 
-if (!empty($_POST['nome'])) {
-    $dados = [
-        "id" => $_POST['id'],
-        "nome" => $_POST['nome'],
-        "sobrenome" => $_POST['sobrenome'],
-        "telefone1" => $_POST['telefone1'],
-        "tipo_telefone1" => $_POST['tipo_telefone1'],
-        "telefone2" => $_POST['telefone2'],
-        "tipo_telefone2" => $_POST['tipo_telefone2'],
-        "email" => $_POST['email'],
+$tabela = "crud_contato";
+$resultCategoria = $objBD->select("crud_agenda");
 
-    ];
+if (!empty($_POST['nome'])) {
 
     if (!empty($_POST['id'])) {
-        $objBD->update($dados);
+        $objBD->update($tabela, $_POST);
     } else {
-        $objBD->insert($dados);
+        $objBD->insert($tabela, $_POST);
     }
 
     header("location:listaContato.php");
 } elseif (!empty($_GET['id'])) {
-    $result = $objBD->find($_GET['id']);
+    $result = $objBD->find($tabela, $_GET['id']);
 }
 ?>
 
