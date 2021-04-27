@@ -11,7 +11,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <title>Olá, mundo!</title>
+    <title>Sis Agenda</title>
 </head>
 
 </body>
@@ -28,10 +28,10 @@
                 <a class="nav-link" href="../index.php">Inicio <span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./listaAgenda.php">Minha Agenda</a>
+                <a class="nav-link" href="../src/listaAgenda.php">Minha Agenda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./listaContato.php">Meus Contatos</a>
+                <a class="nav-link" href="../src/listaContato.php">Meus Contatos</a>
             </li>
         </ul>
     </div>

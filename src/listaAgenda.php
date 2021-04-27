@@ -6,6 +6,7 @@ $tabela = "crud_agenda";
 if (!empty($_POST['valor'])) {
     $result = $objBD->search($tabela, $_POST);
 } else {
+    //select * from crud_contato
     $result = $objBD->select($tabela);
 }
 
@@ -40,8 +41,9 @@ include "./head.php"
                 <option value="data_fim">Data fim</option>
                 <option value="hora_fim">Hora fim</option>
                 <option value="local">Local</option>
-                <option value="descricao">Descrição</option>
                 <option value="convidado_id">Convidado</option>
+                <option value="descricao">Descrição</option>
+
             </select>
         </div>
         <div class="col-3">
@@ -51,7 +53,6 @@ include "./head.php"
         </div>
     </div>
 </form>
-
 
 
 <table class="table table-hover">
@@ -75,22 +76,23 @@ include "./head.php"
         <?php
 foreach ($result as $item) {
     $item = (object) $item;
+    $resultCategoria = $objBD->find("crud_agenda", $item->categoria_id);
+    
     echo "
-        <tr>
-        <th scope='row'>" . $item->id . "</td>
-        <td>" . $item->titulo . "</td>
-        <td>" . $item->data_inicio . "</td>
-        <td>" . $item->hora_inicio . "</td>
-        <td>" . $item->data_fim . "</td>
-        <td>" . $item->hora_fim . "</td>
-        <td>" . $item->local . "</td>
-        <td>" . $item->descricao . "</td>
-        <td>" . $item->convidado_id . "</td>      
-        <td><a href = 'cadastroAgenda.php?id=" . $item->id . "' style='color:orange;''><i class='fas fa-edit'></i></a></td>
-        <td><a href='listaAgenda.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \" style='color:red;'><i class='fas fa-trash'></i></a> </td>       
-        
-        </tr>
-        ";
+    <tr>
+    <th scope='row'>" . $item->id . "</td>
+    <td>" . $item->titulo . "</td>
+    <td>" . $item->data_inicio . "</td>
+    <td style=color:blue>" . $item->hora_inicio . "</td>
+    <td>" . $item->data_fim . "</td>
+    <td style=color:blue>" . $item->hora_fim . "</td>
+    <td>" . $item->local . "</td>
+    <td style=color:blue>" . $item->descricao . "</td>
+    <td><a href = 'cadastroAgenda.php?id=" . $item->id . "' style='color:orange;''><i class='fas fa-edit'></i></a></td>
+    <td><a href='listaAgenda.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \" style='color:red;'><i class='fas fa-trash'></i></a> </td>       
+     </tr>
+    ";
+       
 }
 ?>
     </tbody>

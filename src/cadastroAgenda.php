@@ -99,7 +99,6 @@ include "./head.php"
         <div class="form-row">
 
             <div class="form-group col-md-6"><label>Convidado</label>
-                <label for="categoria_id">Categoria</label>
                 <select class="custom-select" id="categoria_id" name="categoria_id">
                     <?php
                 foreach ($resultCategoria as $item) {
