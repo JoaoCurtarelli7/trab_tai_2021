@@ -6,11 +6,13 @@ $objBD = new bd();
 $tabela = "crud_agenda";
 $resultCategoria = $objBD->select("crud_contato");
 
-if (!empty($_POST['nome'])) {
+if (!empty($_POST['titulo'])) {
 
     if (!empty($_POST['id'])) {
         $objBD->update($tabela, $_POST);
     } else {
+        var_dump($_POST);
+
         $objBD->insert($tabela, $_POST);
     }
 

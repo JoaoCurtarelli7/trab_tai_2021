@@ -63,8 +63,8 @@ include "./head.php"
         <th scope="col">Data fim</th>
         <th scope="col">Hora fim</th>
         <th scope="col">Local</th>
-        <th scope="col">Descrição</th>
         <th scope="col">Convidado</th>
+        <th scope="col">Descrição</th>
         <th scope="col">Ação</th>
         <th scope="col">Ação</th>
 
@@ -86,6 +86,7 @@ foreach ($result as $item) {
     <td>" . $item->data_fim . "</td>
     <td style=color:blue>" . $item->hora_fim . "</td>
     <td>" . $item->local . "</td>
+    <td>" . $resultCategoria->nome . "</td>
     <td style=color:blue>" . $item->descricao . "</td>
     <td><a href = 'cadastroAgenda.php?id=" . $item->id . "' style='color:orange;''><i class='fas fa-edit'></i></a></td>
     <td><a href='listaAgenda.php?id=" . $item->id . "' onclick=\"return confirm('Deseja remover o registro ?'); \" style='color:red;'><i class='fas fa-trash'></i></a> </td>       
