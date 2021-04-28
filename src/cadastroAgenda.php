@@ -49,8 +49,8 @@ include "./head.php"
             <div class="col-6">
                 <label>Titulo</label>
                 <input type="text" class="form-control" placeholder="Reunião" aria-describedby="basic-addon1"
-                    name="nome" id="" value="<?php echo !empty($result->nome)
-? $result->nome : ""; ?>" required><br>
+                    name="titulo" id="" value="<?php echo !empty($result->titulo)
+? $result->titulo : ""; ?>" required><br>
             </div>
 
         </div>
@@ -59,13 +59,13 @@ include "./head.php"
 
             <div class="col-3">
                 <label>Data Início</label>
-                <input type="date" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
-? $result->nome : ""; ?>" required>
+                <input type="date" class="form-control" aria-describedby="basic-addon1" name="data_inicio" id="" value="<?php echo !empty($result->data_inicio)
+? $result->data_inicio : ""; ?>" required>
             </div>
             <div class="col-3">
                 <label>Hora Início</label>
-                <input type="time" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
-? $result->nome : ""; ?>" required>
+                <input type="time" class="form-control" aria-describedby="basic-addon1" name="hora_inicio" id="" value="<?php echo !empty($result->hora_inicio)
+? $result->hora_inicio : ""; ?>" required>
                 <br>
             </div>
 
@@ -75,13 +75,13 @@ include "./head.php"
 
             <div class="col-3">
                 <label>Data Fim</label>
-                <input type="date" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
-? $result->nome : ""; ?>" required>
+                <input type="date" class="form-control" aria-describedby="basic-addon1" name="data_fim" id="" value="<?php echo !empty($result->data_fim)
+? $result->data_fim : ""; ?>" required>
             </div>
             <div class="col-3">
                 <label>Hora Fim</label>
-                <input type="time" class="form-control" aria-describedby="basic-addon1" name="nome" id="" value="<?php echo !empty($result->nome)
-? $result->nome : ""; ?>" required><br>
+                <input type="time" class="form-control" aria-describedby="basic-addon1" name="hora_fim" id="" value="<?php echo !empty($result->hora_fim )
+? $result->hora_fim  : ""; ?>" required><br>
             </div>
 
         </div>
@@ -89,9 +89,9 @@ include "./head.php"
 
             <div class="col-6">
                 <label>Local</label>
-                <input type="text" class="form-control" placeholder="Local" aria-describedby="basic-addon1" name="nome"
-                    id="" value="<?php echo !empty($result->nome)
-? $result->nome : ""; ?>" required><br>
+                <input type="text" class="form-control" placeholder="Local" aria-describedby="basic-addon1" name="local"
+                    id="" value="<?php echo !empty($result->local)
+? $result->local : ""; ?>" required><br>
             </div>
 
         </div>
@@ -120,7 +120,7 @@ include "./head.php"
         <div class="form-row">
             <div class="form-group col-6">
                 <label for="exampleFormControlTextarea1">Descrição</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" rows="3"
                     placeholder="Ponto de referência..."></textarea>
             </div>
         </div>
