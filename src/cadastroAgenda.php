@@ -99,12 +99,12 @@ include "./head.php"
         <div class="form-row">
 
             <div class="form-group col-md-6"><label>Convidado</label>
-                <select class="custom-select" id="categoria_id" name="categoria_id">
+                <select class="custom-select" id="convidado_id" name="convidado_id">
                     <?php
                 foreach ($resultCategoria as $item) {
                     $item = (object) $item;
 
-                    $selected = $item->id === $result->categoria_id ? "selected" : "";
+                    $selected = $item->id === $result->convidado_id ? "selected" : "";
 
                     echo " <option value=" . $item->id . " $selected>" . $item->nome . "</option>";
                 }

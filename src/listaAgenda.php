@@ -6,7 +6,6 @@ $tabela = "crud_agenda";
 if (!empty($_POST['valor'])) {
     $result = $objBD->search($tabela, $_POST);
 } else {
-    //select * from crud_contato
     $result = $objBD->select($tabela);
 }
 
@@ -76,7 +75,7 @@ include "./head.php"
         <?php
 foreach ($result as $item) {
     $item = (object) $item;
-    $resultCategoria = $objBD->find("crud_agenda", $item->categoria_id);
+    $resultCategoria = $objBD->find("crud_contato", $item->convidado_id);
     
     echo "
     <tr>
